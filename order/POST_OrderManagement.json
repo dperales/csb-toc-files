@@ -4,14 +4,13 @@
   "orderDate": "2016-05-30T00:00",
   "requestedCompletionDate": "2016-05-30",
   "requestedStartDate": "2016-05-30",
-  "state": "completed",
   "orderItem": [
     {
       "id": "100",
-      "action": "notify-purchase",
+      "action": "external-activation",
       "quantity": 1,
       "product": {
-        "href": "https://host:port/MultiSubscritptions/v1/1001839/subscriptions/1003154",
+        "href": "https://host:port/MultiSubscriptions/v1/1001839/subscriptions/1003154",
         "id": "1003154"
       }
     }
