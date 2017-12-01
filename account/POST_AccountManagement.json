@@ -28,5 +28,20 @@
     "contactMode" : "email",
     "details" : "user@domain.br", // Form self register
     "isPreferred" : true
-  } ]
+  } ],
+  "contacts" : [ {
+    "contactType": "administrative",
+    "contactData": {
+      "name": {
+        "fullName": "administrative GLOBO COMUNICACAO E PARTICIPACOES"
+      },
+      "contactingModes": [{
+        "contactMode": "phone",
+        "details": "(21) 2540-2623)"
+      }, {
+        "contactMode": "email",
+        "details": "admin@domain.br"
+      }]
+    }
+  }]
 }
