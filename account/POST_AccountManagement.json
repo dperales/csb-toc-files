@@ -22,12 +22,10 @@
   } ],
   "contactingModes" : [ {
     "contactMode" : "phone",
-    "details" : "(21) 2540-2623", // Form self register
-    "isPreferred" : false
+    "details" : "(21) 2540-2623" // Form self register
   }, {
     "contactMode" : "email",
-    "details" : "user@domain.br", // Form self register
-    "isPreferred" : true
+    "details" : "user@domain.br" // Form self register
   } ],
   "contacts" : [ {
     "contactType": "administrative",
