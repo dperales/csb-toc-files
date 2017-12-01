@@ -1,6 +1,6 @@
 {
   "account" : {
-    "accountName" : "GLOBO COMUNICACAO E PARTICIPACOES S/A", //  GET from https://www.receitaws.com.br ("nome")
+    "accountName" : "YYYY XXX S/A", //  GET from https://www.receitaws.com.br ("nome")
     "accountStatus" : "active", // GET from https://www.receitaws.com.br ("situacao": "ATIVA")
     "segment" : "emarketplace", // Fixed
     "accType" : "customer" // Fixed
@@ -8,21 +8,21 @@
   "address" : [ {
     "addressName" : "FIXED", // "cep": "22.460-901",
     "addressNumber" : {
-      "value" : "FIXED"
+      "value" : "303"
     },
     "country" : "br",
     "locality" : "RIO DE JANEIRO", //  GET from https://www.receitaws.com.br ("municipio")
     "postalCode" : "22.460-901", //  GET from https://www.receitaws.com.br ("cep": "22.460-901")
-    "region" : "FIXED"
+    "region" : "JARDIM BOTANICO"
   } ],
   "identification" : [ {
-    "country" : "br",
-    "nationalID" : "27.865.757/0001-02",
+    "country" : "br",  // FIXED
+    "nationalID" : "17.465.457/0001-02",
     "nationalIDType" : "CNPJ" // Form self register and validate with https://www.receitaws.com.br
   } ],
   "contactingModes" : [ {
     "contactMode" : "phone",
-    "details" : "(21) 2540-2623" // Form self register
+    "details" : "(21) 1543-1223" // Form self register
   }, {
     "contactMode" : "email",
     "details" : "user@domain.br" // Form self register
@@ -31,14 +31,14 @@
     "contactType": "administrative",
     "contactData": {
       "name": {
-        "fullName": "administrative GLOBO COMUNICACAO E PARTICIPACOES"
+        "fullName": "administrative YYYY XXX S/A" //  GET from https://www.receitaws.com.br ("nome")
       },
       "contactingModes": [{
         "contactMode": "phone",
-        "details": "(21) 2540-2623)"
+        "details": "(21) 3543-1223" // Form self register
       }, {
         "contactMode": "email",
-        "details": "admin@domain.br"
+        "details": "admin@domain.br"  // Form self register
       }]
     }
   }]
