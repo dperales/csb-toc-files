@@ -12,9 +12,16 @@
         #catalog div header {
             font-size: 18px;
         }
-
+        #catalog input {
+           width: 50px;
+            text-align: right;
+        }
+        #catalog div div {
+            display: inline-block;
+            width: auto;
+        }
         #catalog div {
-            min-width: 150px;
+            width: 300px;
             display: inline-block;
             padding: 10px 20px;
             margin: 5px 6px;
@@ -46,24 +53,19 @@
         var urlbase = 'http://localhost/Vivo.Mkp.Proxy';
 
         var aidCS = 'b5eaf9e5-422f-41f6-bcc4-c12eaffe6ef2';
-        var cfgCS = '{"HiddenStep1":0,"TitleStep3P":"","HiddenStep2":0,"HiddenStep3":0,"AdminAsigned":"","OtherUser":"","AdminUserTip":"","AdminUserCPanel":"","UserListAdmin":[{}]}';
+        var cfgCS = '{"HiddenStep1":0,"TitleStep3P":"","HiddenStep2":0,"HiddenStep3":0,"AdminAsigned":"","OtherUser":"","AdminU serTip":"","AdminUserCPanel":"","UserListAdmin":[{}]}';
         var aidCD = 'bb115d15-5e26-442c-afe8-27eff592aae5';
-        var cfgCD =  '{"TitleStep1P":"","TitleStep2P":"","TitleStep3P":"","QtyLiteLic":0,"QtyBasicLic":0,"QtyAdvancedLic":0,"QtyBackLic":0,"UserListAdmin":[{"QtyBackLicUser":0}],"UserListUser":[],"UserList":[{"QtyBackLicUser":0}],"MaxUserCount":-1,"PortalName":"","LitQtyLiteLic":0,"LitQtyBasicLic":0,"LitQtyAdvancedLic":0,"LitQtyBackLic":0,"GbConsumed":""}';
 
         var catalog = [
 
-           { applicationId: aidCS, billableconceptId: '4fdee637-b877-49c2-bb83-1c8d5f8ef741', configuration: cfgCS, appName: 'Cloud Servers', code: 'Custom' },
-           { applicationId: aidCS, billableconceptId: 'f69a21cd-bcd9-4f8f-b648-8e4c195c6b1e', configuration: cfgCS, appName: 'Cloud Servers', code: 'Basic'  },
+           { applicationId: aidCS, billableconceptId: '4fdee637-b877-49c2-bb83-1c8d5f8ef741', configuration: cfgCS, appName: 'Cloud Servers', code: 'Cloud Servers' },
 
-           { applicationId: aidCD, billableconceptId: 'ee976b1b-0e6a-4679-af59-22cbf04c8086', configuration: cfgCD, appName: 'Cloud Drive', code: 'Lite License'     },
-           { applicationId: aidCD, billableconceptId: '53966fbb-9f46-4d71-8fc3-3da2c2973698', configuration: cfgCD, appName: 'Cloud Drive', code: 'Basic License'    },
-           { applicationId: aidCD, billableconceptId: '097a9fa7-1b56-4409-8623-90cea69421e1', configuration: cfgCD, appName: 'Cloud Drive', code: 'Backup License'   },
-           { applicationId: aidCD, billableconceptId: '87c6eb2f-8d46-4ff1-a816-a0cee05f860d', configuration: cfgCD, appName: 'Cloud Drive', code: 'Advanced License' },
-           { applicationId: aidCD, billableconceptId: '03883986-048e-495a-a9d3-da61c1078861', configuration: cfgCD, appName: 'Cloud Drive', code: 'BASICS' },
+           { applicationId: aidCD, billableconceptId: 'ee976b1b-0e6a-4679-af59-22cbf04c8086', configuration: '{"TitleStep1P":"","TitleStep2P":"","TitleStep3P":"","QtyLiteLic":1,"QtyBasicLic":0,"QtyAdvancedLic":0,"QtyBackLic":0,"UserListAdmin":[{"QtyBackLicUser":0}],"UserListUser":[],"UserList":[{"QtyBackLicUser":0}],"MaxUserCount":-1,"PortalName":"","LitQtyLiteLic":0,"LitQtyBasicLic":0,"LitQtyAdvancedLic":0,"LitQtyBackLic":0,"GbConsumed":""}', appName: 'Cloud Backup', code: 'Lite License' },
+           { applicationId: aidCD, billableconceptId: '53966fbb-9f46-4d71-8fc3-3da2c2973698', configuration: '{"TitleStep1P":"","TitleStep2P":"","TitleStep3P":"","QtyLiteLic":0,"QtyBasicLic":1,"QtyAdvancedLic":0,"QtyBackLic":0,"UserListAdmin":[{"QtyBackLicUser":0}],"UserListUser":[],"UserList":[{"QtyBackLicUser":0}],"MaxUserCount":-1,"PortalName":"","LitQtyLiteLic":0,"LitQtyBasicLic":0,"LitQtyAdvancedLic":0,"LitQtyBackLic":0,"GbConsumed":""}', appName: 'Cloud Backup', code: 'Basic License' },
+           { applicationId: aidCD, billableconceptId: '87c6eb2f-8d46-4ff1-a816-a0cee05f860d', configuration: '{"TitleStep1P":"","TitleStep2P":"","TitleStep3P":"","QtyLiteLic":0,"QtyBasicLic":0,"QtyAdvancedLic":1,"QtyBackLic":0,"UserListAdmin":[{"QtyBackLicUser":0}],"UserListUser":[],"UserList":[{"QtyBackLicUser":0}],"MaxUserCount":-1,"PortalName":"","LitQtyLiteLic":0,"LitQtyBasicLic":0,"LitQtyAdvancedLic":0,"LitQtyBackLic":0,"GbConsumed":""}', appName: 'Cloud Backup', code: 'Advanced License' },
 
            { applicationId: '00000000-0000-0000-0000-000000000000', billableconceptId: '00000000-0000-0000-0000-000000000000', configuration: '', appName: 'Errors', code: '500' },
            { applicationId: '00000000-0000-0000-0000-000000000000', billableconceptId: '4a358c3a-447e-44d1-ab84-f4349aff4392', configuration: '', appName: 'Errors', code: '404' }
-
         ];
 
         var url = urlbase + '/ordering/config';
@@ -112,10 +114,42 @@
             return false;
         }
 
+        function magicbuttonCloudbackupLite(num) {
+
+            var request = [
+                {
+                    applicationId: aidCD,
+                    billableconceptId: 'ee976b1b-0e6a-4679-af59-22cbf04c8086',
+                    configuration: '{"TitleStep1P":"","TitleStep2P":"","TitleStep3P":"","QtyLiteLic":' + num + ',"QtyBasicLic":0,"QtyAdvancedLic":0,"QtyBackLic":0,"UserListAdmin":[{"QtyBackLicUser":0}],"UserListUser":[],"UserList":[{"QtyBackLicUser":0}],"MaxUserCount":-1,"PortalName":"","LitQtyLiteLic":0,"LitQtyBasicLic":0,"LitQtyAdvancedLic":0,"LitQtyBackLic":0,"GbConsumed":""}'
+                }
+            ];
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                dataType: 'json',
+                data: JSON.stringify(request),
+                contentType: 'application/json',
+                error: function (err) {
+                    console.log(err.status + ': ' + err.statusText);
+                },
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+
     </script>
 
     <h1>Magic button test page</h1>
-    <div id="catalog"></div>
+    <div id="catalog">
+        <div>
+            <header>Cloud Backup</header>
+            <div>Lite Licenses:</div>
+            <div><input type="number" id="numliclit" value="2" /></div>
+            <button onclick="magicbuttonCloudbackupLite($('#numliclit').val())">Comprar</button>
+        </div>
+    </div>
 
 </body>
 </html>
