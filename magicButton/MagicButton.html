@@ -50,7 +50,8 @@
 <body>
 
     <script>
-        var urlbase = 'http://localhost/Vivo.Mkp.Proxy';
+//        var urlbase = 'http://localhost/Vivo.Mkp.Proxy';
+        var urlbase = 'https://requestb.in/138hl4e1';
 
         var aidCS = 'b5eaf9e5-422f-41f6-bcc4-c12eaffe6ef2';
         var cfgCS = '{"HiddenStep1":0,"TitleStep3P":"","HiddenStep2":0,"HiddenStep3":0,"AdminAsigned":"","OtherUser":"","AdminU serTip":"","AdminUserCPanel":"","UserListAdmin":[{}]}';
@@ -68,7 +69,8 @@
            { applicationId: '00000000-0000-0000-0000-000000000000', billableconceptId: '4a358c3a-447e-44d1-ab84-f4349aff4392', configuration: '', appName: 'Errors', code: '404' }
         ];
 
-        var url = urlbase + '/ordering/config';
+//        var url = urlbase + '/ordering/config';
+        var url = urlbase;
 
         $(document).ready(function () {
 
@@ -96,6 +98,7 @@
                 }
             ];
 
+            prompt("Copy to clipboard: Ctrl+C, Enter", JSON.stringify(request));
 
             $.ajax({
                 type: 'POST',
@@ -127,6 +130,10 @@
             $.ajax({
                 type: 'POST',
                 url: url,
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+                },
                 dataType: 'json',
                 data: JSON.stringify(request),
                 contentType: 'application/json',
