@@ -32,12 +32,7 @@
       "nationalID": "17.465.457/0001-02",
       "nationalIDType": "CNPJ"
       // Form self register and validate with https://www.receitaws.com.br
-    },
-    {
-      "country": "string",
-      "nationalID": "string",
-      "nationalIDType": "string"
-    },
+    }
   ],
   "contactingModes": [
     {
