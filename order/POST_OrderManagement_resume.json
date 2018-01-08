@@ -9,8 +9,9 @@
       "id": "100",
       "action": "resume",
       "product": {
-        "href": "https://host:port/MultiSubscriptions/v1/1001839/subscriptions/1003154",
-        "id": "1003154"
+        "href": "https://host:port/MultiSubscriptions/v1/7c86370f-d126-4057-a041-261fc55dfcbf/subscriptions/e97e0b1f-99f3-4ca9-832d-e70f12468cf7",
+        //                                               {UserId} UUID                                      {subscriptionId} UUID
+        "id": "e97e0b1f-99f3-4ca9-832d-e70f12468cf7"
       }
     }
   ]
